@@ -1,0 +1,19 @@
+public int numOfSubarrays(int[] arr) {
+    int count = 0;
+    int oddSumCount = 0;
+    int evenSumCount = 1;
+    int sum = 0;
+    for (int num : arr) {
+        sum += num;
+        if (sum % 2 == 0) {
+            count += oddSumCount;
+            evenSumCount++;
+        } else {
+            count += evenSumCount;
+            oddSumCount++;
+        }
+    }
+    return count;
+    }
+	
+}
